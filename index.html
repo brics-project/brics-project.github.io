@@ -206,7 +206,7 @@ key codes, which are used to retrieve features from groups of multi-resolution f
 grids. Our key codes and feature grids are jointly trained continuously with well-defined gradient flows, leading to high usage of the feature grids and improved generative modeling compared to discrete Vector Quantization (VQ).
 Differently from existing continuous representations such as KL-regularized latent codes, our key codes are strictly bounded in 
 scale and variance. Overall, feature encoding by BRICS is compact, efficient to train, and enables generative modeling over key codes using the diffusion model. Experimental results show that our method achieves comparable reconstruction results to VQ methods while having a smaller and more efficient decoder network (<b>≈50% fewer</b> GFlops). By applying the diffusion model over our key code space, we achieve
-state-of-the-art performance on image synthesis on the LSUN-Church (<b>≈26% lower</b> than <a href="https://arxiv.org/abs/2112.10752">LDM</a>, <b>≈29% lower</b> than <a href="https://arxiv.org/abs/1912.04958">StyleGAN2</a> and <b>≈42% lower</b> than <a href="https://arxiv.org/abs/2111.01007">Projected GAN</a> on CLIP-FID) and FFHQ datasets. 
+state-of-the-art performance on image synthesis on the LSUN-Church (<b>≈29% lower</b> than <a href="https://arxiv.org/abs/2112.10752">LDM</a>, <b>≈32% lower</b> than <a href="https://arxiv.org/abs/1912.04958">StyleGAN2</a> and <b>≈44% lower</b> than <a href="https://arxiv.org/abs/2111.01007">Projected GAN</a> on CLIP-FID) and FFHQ datasets. 
           </p>
         </div>
       </div>
@@ -319,7 +319,7 @@ fewer GFlops </b>due to its smaller decoder and the efficiency gained from utili
         <h3 class="title is-4">Generation</h3>
         <div class="content has-text-justified">
           <p>
-            We achieve the state-of-the-art <b>CLIP-FID</b> than others (<b>≈42% lower</b> than Projected GAN, <b>≈29% lower</b> than StyleGAN2, and <b>≈26% lower</b> than LDM) while maintaining competitive on all other metrics. Moreover, the <b>precision </b> score of our
+            We achieve the state-of-the-art <b>CLIP-FID</b> than others (<b>≈44% lower</b> than Projected GAN, <b>≈32% lower</b> than StyleGAN2, and <b>≈29% lower</b> than LDM) while maintaining competitive on all other metrics. Moreover, the <b>precision </b> score of our
 generated images is significantly higher than others, indicating a substantial reduction of low-quality
 samples in our results, while our recall is the second best in LSUN-Church and is almost the same as StyleGAN2 in FFHQ dataset.
           </p>
@@ -329,7 +329,7 @@ samples in our results, while our recall is the second best in LSUN-Church and i
             <img src="static/images/church_gen_quant_results.png" class="center_table">
             <p align="center">
               Quantitative results of generation on LSUN-Church dataset. 
-              Our relaxed precision (Config d) method is adapted to two distinct noise schedulers(Config a,b) and 
+              Our relaxed precision (Config d) method is adapted to two distinct noise schedulers (Config a,b) and 
               gets record low CLIP-FID in Config b + d, while Config a + c (KL-reg with min-snr noise scheduler) gets much worse results. * denotes that we measure the metrics of Projected GAN 
               using the checkpoint provided from the <a href="https://github.com/autonomousvision/projected-gan">official Projected GAN Github repository</a>. Underlined numbers are the second best results.
             </p>
